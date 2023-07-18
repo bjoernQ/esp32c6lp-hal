@@ -1,16 +1,23 @@
 [package]
-name = "esp32c6lp-hal"
+name = "esp32c6-lp-hal"
 version = "0.1.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[lib]
+bench = false
+test = false
 
 [dependencies]
-esp32c6-lp = { git = "https://github.com/bjoernQ/esp-pacs.git", features = ["critical-section"] }
 critical-section = { version = "1.1.1", features = ["restore-state-u8"] }
+embedded-hal = { version = "0.2.7", features = ["unproven"] }
+esp32c6-lp = { git = "https://github.com/esp-rs/esp-pacs", rev = "7f42abf", features = ["critical-section"] }
+paste = "1.0.14"
 riscv = "0.10.1"
 riscv-rt-macros = "0.2.0"
-embedded-hal = "0.2.6"
-
-paste = "1.0.14"
 
 [dev-dependencies]
 panic-halt = "0.2.0"
+
+[features]
+debug = ["esp32c6-lp/impl-register-debug"]
