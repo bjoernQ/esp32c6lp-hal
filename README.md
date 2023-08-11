@@ -1,3 +1,7 @@
+Work will continue in https://github.com/esp-rs/esp-hal/tree/main/esp32c6-lp-hal
+
+---
+
 # ESP32-C6 LP HAL
 
 After an experimental phase here this eventually will be moved to https://github.com/esp-rs/esp-hal once this becomes useful.
